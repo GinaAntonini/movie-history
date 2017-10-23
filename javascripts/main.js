@@ -4,6 +4,7 @@ let apiKeys = require('./apiKeys');
 let events = require('./events');
 
 apiKeys.retrieveKeys();
+events.myLinks();
 events.pressEnter();
 
 // let singleMovie = {
