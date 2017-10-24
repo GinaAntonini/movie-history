@@ -36,7 +36,6 @@ const getConfig = () => {
 
 
 const searchMovies = (query) => {
-	console.log(query);
 	searchTMDB(query).then((data) => {
 		showResults(data);
 	}).catch((error) => {
