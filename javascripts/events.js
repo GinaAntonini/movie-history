@@ -48,7 +48,26 @@ const googleAuth = () => {
 };
 
 
+const wishListEvents = () => {
+	//use "on" when the element is not there on page load (the movies in this case)
+	$('body').on('click', '.wishlist', (e) => {
+		console.log("wishlist event", e);
+		let mommy = e.target.closest('.movie');
+		let newMovie = {
+			"title": $(mommy).find('.title').html(),
+			"overview": $(mommy).find('.overview').html(),
+			"poster_path": $(mommy).find('.poster_path').attr('src'),
+			"rating": 0,
+			"isWatched": false,
+			"uid": ""
+		};
+		console.log("newMovie", newMovie);
+		// firebaseApi.saveMovie().then().catch();
+	});
+};
 
 
 
-module.exports = {pressEnter, myLinks, googleAuth};
+
+
+module.exports = {pressEnter, myLinks, googleAuth, wishListEvents};
